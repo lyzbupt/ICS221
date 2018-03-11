@@ -1,0 +1,21 @@
+github 
+$ ssh-keygen -t rsa -C "your_email@youremail.com"
+
+之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在~/下生成.ssh文件夹，进去，打开id_rsa.pub，复制里面的key。
+回到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。
+
+$ ssh -T git@github.com
+如果是第一次的会提示是否continue，输入yes就会看到：You've successfully authenticated, but GitHub does not provide shell access 。这就表示已成功连上github。
+
+mkdir github
+pwd
+
+cd github
+git init
+
+cd search-engine
+ 进入要上传的仓库  $ git remote add origin git@github.com:yourName/yourRepo.git
+
+ git remote add origin git@github.com:lyzbupt/ICS221.git
+ git push -u origin master
+ git clone https://github.com/用户id/远程仓库名.git 从远程库中克隆到本地
